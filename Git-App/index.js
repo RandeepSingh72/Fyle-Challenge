@@ -5,7 +5,6 @@ let totalRepos = 0;
 let repositories = [];
 let currentUser = ''
 const userbtn = document.querySelector('#userbtn')
-const token ='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';
 
 $(document).ready(function() {
 
@@ -49,12 +48,9 @@ document.getElementById("userbtn").addEventListener("click", function() {
 async function fetchGitHubUser() {
   const username = document.getElementById("username").value;
   try {
-    const response = await fetch(`https://api.github.com/users/${username}`, {
-      headers: {
-          Authorization: `Bearer ${token}`
-      }
-     });
+    const response = await fetch(`https://api.github.com/users/${username}`);
     const data = await response.json();
+    console.log(data);
     displayUser(data)
   } catch (error) {
     console.log(error);
@@ -118,11 +114,7 @@ async function getRepositories() {
   const url = `https://api.github.com/users/${username}/repos?type=public&page=${currentPage}&per_page=${perPage}`;
   try {
     showLoader();
-    const response = await fetch(url, {
-      headers: {
-          Authorization: `Bearer ${token}`
-      }
-     });
+    const response = await fetch(url);
     const data = await response.json();
     const linkHeader = response.headers.get('Link');
         if (linkHeader) {
@@ -198,11 +190,7 @@ async function fetchLanguages() {
   const languagePromises = repositories && repositories.map(async repo => {
       try {
           const languagesUrl = `https://api.github.com/repos/${repo.full_name}/languages`;
-          const languagesResponse = await fetch(languagesUrl, {
-              headers: {
-                  Authorization: `Bearer ${token}`
-              }
-          });
+          const languagesResponse = await fetch(languagesUrl);
 
           if (!languagesResponse.ok) {
               throw new Error(`GitHub API Error: ${languagesResponse.status} ${languagesResponse.statusText}`);
