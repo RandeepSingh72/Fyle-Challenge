@@ -1,0 +1,183 @@
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    padding-bottom: 1rem;
+}
+main{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.hero{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.50rem;
+    margin-bottom: 1.5rem;
+}
+.avatar{
+    min-height: 150px;
+    width: 150px;
+    margin-left: 8px;
+    margin-bottom: 0.50rem;
+}
+.gitlink{
+    text-decoration: none;
+    margin-left: 4px;
+    font-size: small;
+}
+.avatarImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.biodata{
+    margin-left: 1rem;
+    align-items: center;
+}
+.bio{
+    margin-left: 1rem;
+}
+.name{
+    margin-left: 1rem;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+.location{
+    margin-left: 1rem;
+    font-weight: 500;
+}
+.twitter{
+    margin-left: 1rem;
+}
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0.6rem;
+    margin-bottom: 2rem;
+}
+#searchbar{
+    margin-left: 1rem;
+    padding-top: 0.6rem;
+}
+#search{
+    outline: none;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+.perpage{
+    padding-right: 0.6rem;
+    
+}
+#perPageSelect{
+    border: 2px solid #007bff;
+    outline: none;
+    border-radius: 5px;
+}
+.repoLanguages{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+.repoLanguage{
+    background-color: rgb(101, 119, 255);
+    padding: 0.3rem;
+    color: white;
+    border-radius: 0.4rem;
+}
+#repoList{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 1rem;
+}
+.repoCard{
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 2px solid #007bff;
+}
+.repoName{
+    color: #3498db;
+}
+#loader {
+    display: none;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#paginationNumbers button.activePage {
+    background-color: #007bff;
+    color: #fff;
+    outline: none;
+    border: 1px solid #007bff;
+}
+.smallbtn{
+    background-color: #fff;
+    color: #007bff;
+    outline: none;
+    border: 1px solid #007bff;
+    margin-right: 2px;
+}
+#pagination{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    padding-top: 2rem;
+}
+button:disabled{
+    opacity: 0.35;
+}
+.button{
+    border-radius: 5px;
+    border: 2px solid #007bff;
+    color: white;
+    padding: 3px;
+    outline: none;
+    padding: 2px;
+    background-color: #007bff;
+}
+
+@media (max-width: 768px) {
+    #pagination {
+        position: static;
+        transform: none;
+        text-align: center;
+        padding-bottom: 1rem;
+        padding-top: 2rem;
+    }
+}    
+@media (max-width: 440px) {
+    .d-flex{
+        margin-top: 1rem;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}    
+
+@media (max-width: 570px) {
+    .perpage{
+        padding-top: 0.6rem;
+    }
+    
+}    

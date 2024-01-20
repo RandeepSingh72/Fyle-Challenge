@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Git Repository App</title>
+</head>
+<body>
+
+    <div>
+        <header>
+            <nav class="navbar bg-dark">
+                <div class="container-fluid">
+                  <span class="navbar-brand mb-0 h1 text-white">GitHub Repo.</span>
+                  <div>
+                    <div class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Enter GitHub Username"  id="username">
+                        <button class="button" id="userbtn">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </header>
+    </div>
+
+    <main>
+        <div class="hero">
+            <div id="avatarbox">
+                
+            </div>
+            <div id="biodata">
+                
+            </div>
+        </div>
+
+        <div class="filter">
+        <div id="searchBar">
+            <label for="search">Filter Repositories</label>
+            <input type="text" id="search" placeholder="Filter Repositories" oninput="filterRepositories()" />
+        </div>
+        <div class="perpage">
+            <label for="perPageSelect">Repositories per page:</label>
+            <select id="perPageSelect">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+       </div>
+
+        <ul id="repoList"></ul>
+
+        <div id="loader">
+        
+        </div>
+    </main>
+
+    <div id="pagination" style="display: none;">
+        <button id="prevBtn" class="button">Prev.</button>
+        <span id="paginationNumbers"></span>
+        <button id="nextBtn" class="button">Next</button>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
