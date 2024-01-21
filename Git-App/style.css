@@ -79,6 +79,7 @@ main{
     outline: none;
     border-radius: 5px;
 }
+
 .repoLanguages{
     display: flex;
     flex-wrap: wrap;
@@ -105,6 +106,8 @@ main{
 }
 .repoName{
     color: #3498db;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #loader {
     display: none;
